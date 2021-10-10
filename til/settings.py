@@ -30,7 +30,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost',
-    '*'
+    '*',
+    'placement-desk.herokuapp.com'
 ]
 
 

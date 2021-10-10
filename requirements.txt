@@ -19,7 +19,6 @@ pipenv==2021.5.29
 platformdirs==2.3.0
 pycparser==2.20
 PyJWT==2.1.0
-pypiwin32==223
 python3-openid==3.2.0
 pytz==2021.1
 requests==2.26.0

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{%  block body %}
+<style>
+    .edit{
+        padding-left: 80px;
+        padding-right: 80px;
+        padding-top: 40px;
+    }
+</style>
+<div class="container edit bg-grey ">
+    <form method="POST" action="" >
+        {% csrf_token %}
+        {{form|crispy}}
+        <br>
+        <input type="submit" class="searchbtn" value="Submit">
+    </form>
+</div>
+
+<!-- {{form.as_p}} -->
+{% endblock %}

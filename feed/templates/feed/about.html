@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{%  block body %}
+  
+     <section class="jumbotron text-center">
+        <div class="container py-3" >
+            <div class="about-body">
+                <h1 class="font-mono md:text-sm" style="font-size: 1.5rem;
+                color: rgb(246, 162, 66); padding-bottom: 20px;"> <b> <u> About this Page: </u></b></h1>
+              <p class="lead text-muted">This webpage was created by <b>Final yaer CSE student 'Vishal Meti'</b> in order to help colleagues and juniors in understanding the <b>recruitment process</b> of several companies. <br>
+                During our days we too didn't had much idea about some companies on-campus recruitment process, and also had no place to search and get idea on how to prepared for it. So, I thought of initiating this website for posting the experience of placed students. <br> <br>
+                Students can create account on this website and post/share their valuable experience.
+                <br>
+                <br>
+                Hope this innitiative will help our coleges and also our juniors
+                  <br>
+                For any queries contact <b><u>vishalmeti8@gmail.com</u></b>
+              </p>
+              <p>
+    
+                <a href="{% url 'feed:index' %}" class="btn btn-warning aboutHomebtn my-2" >Back to Home</a>
+              </p>
+            </div>
+        </div>
+      </section>
+
+</body>
+{% endblock %}

@@ -1,0 +1,56 @@
+
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% block body %}
+<form action="" method="get" style="padding: 20px;">
+    <input type="text" name="search-area" placeholder="Enter company name">
+    <input type="submit" value="Search">
+</form> 
+
+{% if posts %}
+{% for post in posts %}
+<div class="max-w-6xl px-10 mx-auto my-4 py-6 bg-white rounded-lg shadow-md" style="">
+    <div class="flex justify-between items-center">
+        <span class="font-light text-gray-600">{{ post.date|date:"F,j,Y,g:i:a" }}</span>
+
+    </div>
+    <div class="mt-2">
+        <a class="text-2xl text-gray-700 d:flex font-bold hover:text-gray-600" href="#">{{ post.CompanyName }}</a>
+        <p class="mt-2 text-gray-600">{{ post.Experience }}</p>
+    </div>
+    <div class="flex justify-between items-center mt-4" style="
+
+     
+     
+    /* display: flex;
+    justify-content: flex-end; */
+    
+    
+    ">
+    
+    <div style="display: flex;">
+        
+        <a class="text-blue-600 hover:underline pl-3 " href="{% url 'feed:detail' post.id %}">More</a>
+    </div>
+
+        
+        <!-- feed and detail in the href stated as feed:detail comes from the urls file.. there the appname is feed and name of the path is detail -->
+        <div >
+            <a class="flex items-center" href="#">
+                {% thumbnail post.author.profile.image "373x372" crop="center" as im %}              
+                    <img class="mx-4 w-10 h-10 object-cover rounded-full  sm:block" src="{{im.url}}" alt="avatar">
+                {% endthumbnail %}
+                <h1 class="text-gray-700 font-bold">{{post.author.username}}</h1>
+            </a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% endif %}
+
+{% else %}
+<h3>No Posts </h3>
+{% endif %}
+
+{% endblock %}

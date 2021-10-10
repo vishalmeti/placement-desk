@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %} Create new post  {% endblock %}
+
+{% block body %}  
+{% load crispy_forms_tags %}
+
+<style>
+  .create-post{
+    padding: 50px;
+  }
+</style>
+
+<div class="create-post">
+<form action="" method="post">
+  {% csrf_token %}
+  {{form}}
+  <div class="form-group" >
+    
+    <button class="bg-yellow-500 px-4 py-2 text-sm shadow-sm font-medium tracking-wider  text-yellow-100 rounded-lg hover:shadow-2xl hover:bg-yellow-600"type="submit" value="Submit"style="font-size:20pxl; margin-top:20px">Post &nbsp;<i class='bx bxs-message-square-add'style="font-size:20px" ></i></button>
+</div>
+</form>
+</div>
+
+
+
+{% endblock %}

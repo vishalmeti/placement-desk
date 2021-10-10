@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+
+{% block title %}Detailed post by {{post.author}}{% endblock %}
+
+{% block body %}
+
+
+  <div style="height:90vh ;padding:20px; padding-bottom: 50px;  ">
+    <div class="card lg:card-side bordered m-3 h-100">
+        <div class="card-body " style="overflow-y: scroll ; display: flex; justify-content: space-between;"  >
+          
+            <div>
+
+                <h2 class="card-title"> <b>Participant Name: </b> {{post.author.username|title}}  </h2> 
+                <h2 class="card-title"> <b>Comapny Name: </b> {{post.CompanyName}}  </h2> 
+                <h1 class="card-title"><b>CTC offered:</b> {{post.ctc}} lpa</h1>
+                <h1 class="card-title"><b>Difficulty:</b> {{post.Difficulty}}</h1>
+                <h1 class="card-title"><b>Department:</b> {{post.department}} </h1>
+                <h2 class='pt-3'><b>Experience:</b></h2>
+                <p  >{{post.Experience}}</p> 
+            </div>
+            
+ 
+
+
+            
+            
+
+
+
+        
+
+          <div class="card-actions">
+            <a href="{% url 'feed:index' %}">
+            <button class="searchbtn"  >Back</button> 
+          </a>
+          </div>
+        </div>
+    </div>
+  </div>
+
+{% endblock %}

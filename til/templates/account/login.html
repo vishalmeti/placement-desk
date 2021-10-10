@@ -1,0 +1,106 @@
+{% extends "account/base.html" %}
+
+<!-- {% load i18n %} -->
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="form">
+    <!-- <h1>{% trans "Sign In" %}</h1> -->
+
+    <!-- <form class="login" method="POST" action="{% url 'account_login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if redirect_field_value %}
+        <input type="hidden"  name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+        <button class="primaryAction bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" type="submit">{% trans "Sign In" %}</button>
+
+      </form> -->
+
+      <div class="form text-center font-sans ">
+        <div class="relative min-h-screen flex flex-col sm:justify-center items-center bg-white-100 ">
+          <div class="relative sm:max-w-sm w-full" >
+ 
+              <div class="relative w-full rounded-3xl  px-6 py-4 shadow-md" style="height:70vh;
+               display: flex;
+               flex-direction: column;
+               font-size: 20px;
+                ">
+               
+                  <label for="" class="block mt-3  text-gray-700 text-center font-semibold">
+                      <h1 style="padding: 4rem;
+                      font-size: 1.2rem;
+                      "><b>{% trans "Sign In" %}</b></h1>
+                    </label>
+                    <form class="login" method="POST"  action="{% url 'account_login' %}">
+                                        
+                      {% csrf_token %}
+                      {{ form|crispy}}
+                      {% if redirect_field_value %}
+                      <div class="loginInput" >
+                        <input  type="hidden"  name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                      </div>
+                      {% endif %}
+                      
+                      <p style="padding-top: 10px;">Dont have an account? <a href="{{ signup_url }}">
+                         <u>Sign up</u>
+                        </a></>
+      
+                               
+                        <div class="mt-7">
+                            <button class="bg-blue-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105type="submit">{% trans "Sign In" %}
+                            </button>
+                            
+                        </div>
+                        
+            
+                    </form>
+                    
+                    
+                </div>
+            </div>
+        </div>
+      </div>
+</div>
+
+
+{% endblock %}
+
+
+<!-- .................................................................................  -->
+
+<!-- component -->
+<!-- <div class="font-sans">
+  <div class="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100 ">
+      <div class="relative sm:max-w-sm w-full">
+          <div class="card bg-blue-400 shadow-lg  w-full h-full rounded-3xl absolute  transform -rotate-6"></div>
+          <div class="card bg-red-400 shadow-lg  w-full h-full rounded-3xl absolute  transform rotate-6"></div>
+          <div class="relative w-full rounded-3xl  px-6 py-4 bg-gray-100 shadow-md">
+              <label for="" class="block mt-3 text-sm text-gray-700 text-center font-semibold">
+                  Registrate
+              </label>
+              <form method="#" action="#" class="mt-10">
+                                  
+                {% csrf_token %}
+                {{ form.as_p }}
+                {% if redirect_field_value %}
+                <input type="hidden"  name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+
+                  
+      
+                  <div class="mt-7">
+                      <button class="bg-blue-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+                          Registrar
+                      </button>
+                  </div>
+      
+              </form>
+          </div>
+      </div>
+  </div>
+</div> -->

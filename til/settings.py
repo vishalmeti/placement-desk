@@ -146,6 +146,7 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
+DISABLE_COLLECTSTATIC=1
 SITE_ID = 1
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
